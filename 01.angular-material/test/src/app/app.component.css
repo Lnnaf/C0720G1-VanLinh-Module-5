@@ -1,0 +1,30 @@
+table {
+  width: 100%;
+}
+.navbar{
+  background-color: #272882;
+}
+.navbar-nav{
+margin-left: 10%;
+
+}
+.nav-item-drowdown{
+  margin-left: 40%;
+}
+.dropdown-toggle{
+  color: #eeeeee;
+}
+.dropdown-menu{
+  background-color: #272882;
+
+}
+.dropdown-item{
+  color: #eeeeee;
+}
+.dropdown-item:hover{
+  background-color: #272882;
+}
+.introduction{
+  width:200%;
+  z-index: 1;
+}
