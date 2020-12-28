@@ -1,0 +1,6 @@
+<h4>ID Student: {{student.id}}</h4>
+<h4>Name: {{student.name}}</h4>
+<h4>Address: {{student.address}}</h4>
+<h4>Age: {{student.age}}</h4>
+<h4>Mark: {{student.mark}}</h4>
+<input type="range" min="0" max="10" (change)="setMark($event.target.value)">

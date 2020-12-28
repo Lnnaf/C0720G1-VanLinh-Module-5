@@ -7,10 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'practice';
-  fontSize = 14;
-  constructor() { }
-  onChange(value) {
-    this.fontSize = value;
-  }
 
 }
