@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {IStudent} from "./IStudent";
 
 @Component({
@@ -8,13 +8,7 @@ import {IStudent} from "./IStudent";
   ]
 })
 export class StudentManagermentComponent implements OnInit {
-student:IStudent={
-  id:1,
-  name:"Linh",
-  address:'danang',
-  age:18,
-  mark:2
-};
+@Input() student:IStudent;
   constructor() { }
 
   ngOnInit(): void {

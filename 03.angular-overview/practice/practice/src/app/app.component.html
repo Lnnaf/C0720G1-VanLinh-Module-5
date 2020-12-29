@@ -1,6 +1,15 @@
-<a routerLink="font-size">Font-size</a><br>
-<a routerLink="color-picker">Color Picker</a><br>
-<a routerLink="pet">pet component</a><br>
-<a routerLink="calculator">calculator</a><br>
-<a routerLink="student">Student Detail</a><br>
+<div class="dropdown">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+        Dropdown link
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <li><a class="dropdown-item" routerLink="font-size">Font-size</a></li>
+        <li><a class="dropdown-item" routerLink="color-picker">Color Picker</a></li>
+        <li><a class="dropdown-item" routerLink="student">Student Detail</a></li>
+        <li><a class="dropdown-item" routerLink="calculator">calculator</a></li>
+        <li><a class="dropdown-item" routerLink="hacker-news">Hacker news</a></li>
+        <li><a class="dropdown-item" routerLink="hacker-news-update">Hacker news Update</a></li>
+        <li><a class="dropdown-item" routerLink="student-list">Student List</a></li>
+    </ul>
+</div>
 <router-outlet></router-outlet>

@@ -5,6 +5,9 @@ import {CalculatorComponent} from "./caculator/calculator.component";
 import {StudentManagermentComponent} from "./student-managerment/student-managerment.component";
 import {FontSizeComponent} from "./font-size/font-size.component";
 import {ColorPickerComponent} from "./color-picker/color-picker.component";
+import {HackerNewsComponent} from "./hacker-news/hacker-news.component";
+import {BaseContentComponent} from "./hacker-news-update/base-content/base-content.component";
+import {StudentListComponent} from "./student-list/student-list.component";
 
 
 const routes: Routes = [
@@ -13,6 +16,9 @@ const routes: Routes = [
   {path: 'calculator', component: CalculatorComponent },
   {path: 'student', component: StudentManagermentComponent },
   {path: 'font-size', component: FontSizeComponent },
+  {path: 'hacker-news', component: HackerNewsComponent },
+  {path: 'hacker-news-update', component: BaseContentComponent },
+  {path: 'student-list', component: StudentListComponent },
 ];
 
 @NgModule({

@@ -1,6 +1,14 @@
-<h4>ID Student: {{student.id}}</h4>
-<h4>Name: {{student.name}}</h4>
-<h4>Address: {{student.address}}</h4>
-<h4>Age: {{student.age}}</h4>
-<h4>Mark: {{student.mark}}</h4>
-<input type="range" min="0" max="10" (change)="setMark($event.target.value)">
+
+<div class="name-card">
+    <div class="name-card__content-left">
+        <img src="../assets/angular.png" alt="Logo" class="name-card__avatar">
+    </div>
+    <div class="name-card__content-right">
+        <h3 class="name-card__heading"> {{student.id}}</h3>
+        <p class="name-card__text">Name: {{student.name}}</p>
+        <p class="name-card__text">Address: {{student.address}}</p>
+        <p class="name-card__text">Age: {{student.age}}</p>
+        <p class="name-card__text">Mark: {{student.mark}}</p>
+        <input type="range" min="0" max="10" (change)="setMark($event.target.value)">
+    </div>
+</div>

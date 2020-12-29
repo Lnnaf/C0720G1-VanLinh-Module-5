@@ -1,0 +1,33 @@
+<table class="table table-hover table-striped">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>AGE</th>
+        <th>ADDRESS</th>
+        <th>MARK</th>
+        <th>RESULT</th>
+        <th>ACTION</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let student of students ">
+        <td>{{student.id}}</td>
+        <td>{{student.name}}</td>
+        <td>{{student.age}}</td>
+        <td>{{student.address}}</td>
+        <td>{{student.mark}}</td>
+        <td >
+            <div *ngIf="student.mark>5; then thenBlock else elseBlock"></div>
+            <ng-template #thenBlock><p style="color: #1aff20">Passed</p></ng-template>
+            <ng-template #elseBlock><p style="color: #ff050f">Failed</p></ng-template>
+        </td>
+        <td><button class="btn btn-danger" type="button" (click)="getDetail(student)">Detail</button></td>
+    </tr>
+    </tbody>
+</table>
+<div *ngIf="studentDetail">
+    <app-student-managerment [student]="studentDetail"></app-student-managerment>
+</div>
+
+
