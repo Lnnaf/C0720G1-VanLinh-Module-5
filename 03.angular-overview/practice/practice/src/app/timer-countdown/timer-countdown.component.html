@@ -1,0 +1,14 @@
+<h2>Countdown Timer</h2>
+
+<div class="group-actions">
+    <button (click)="start()">Start</button>
+    <button (click)="stop()">Stop</button>
+    <button (click)="reset()">Reset</button>
+    <input type="number" (change)="setMin($event.target.value)">
+    <input type="number" (change)="setSec($event.target.value)">
+</div>
+<div class="timer">
+    <span class="timer-text">{{ min}}</span>:
+    <span class="timer-text">{{ sec}}</span>
+</div>
+<p>{{ message }}</p>

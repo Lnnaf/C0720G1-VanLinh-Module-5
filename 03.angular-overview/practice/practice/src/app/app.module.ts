@@ -15,6 +15,8 @@ import { NavbarComponent } from './hacker-news-update/navbar/navbar.component';
 import { NfooterComponent } from './hacker-news-update/nfooter/nfooter.component';
 import { BaseContentComponent } from './hacker-news-update/base-content/base-content.component';
 import { StudentListComponent } from './student-list/student-list.component';
+import { RatingBarComponent } from './rating-bar/rating-bar.component';
+import { TimerCountdownComponent } from './timer-countdown/timer-countdown.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { StudentListComponent } from './student-list/student-list.component';
     NavbarComponent,
     NfooterComponent,
     BaseContentComponent,
-    StudentListComponent
+    StudentListComponent,
+    RatingBarComponent,
+    TimerCountdownComponent
   ],
   imports: [
     BrowserModule,

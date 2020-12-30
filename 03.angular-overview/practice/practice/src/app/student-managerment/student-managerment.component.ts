@@ -4,8 +4,7 @@ import {IStudent} from "./IStudent";
 @Component({
   selector: 'app-student-managerment',
   templateUrl:'student-managerment.component.html',
-  styles: [
-  ]
+  styleUrls:['student-managerment.component.css']
 })
 export class StudentManagermentComponent implements OnInit {
 @Input() student:IStudent;

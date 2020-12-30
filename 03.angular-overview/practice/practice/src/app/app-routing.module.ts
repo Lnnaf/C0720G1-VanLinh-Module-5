@@ -8,6 +8,8 @@ import {ColorPickerComponent} from "./color-picker/color-picker.component";
 import {HackerNewsComponent} from "./hacker-news/hacker-news.component";
 import {BaseContentComponent} from "./hacker-news-update/base-content/base-content.component";
 import {StudentListComponent} from "./student-list/student-list.component";
+import {RatingBarComponent} from "./rating-bar/rating-bar.component";
+import {TimerCountdownComponent} from "./timer-countdown/timer-countdown.component";
 
 
 const routes: Routes = [
@@ -19,6 +21,8 @@ const routes: Routes = [
   {path: 'hacker-news', component: HackerNewsComponent },
   {path: 'hacker-news-update', component: BaseContentComponent },
   {path: 'student-list', component: StudentListComponent },
+  {path: 'rating-bar', component: RatingBarComponent },
+  {path: 'timer', component: TimerCountdownComponent },
 ];
 
 @NgModule({
