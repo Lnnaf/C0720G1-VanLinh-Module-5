@@ -10,6 +10,8 @@ import {BaseContentComponent} from "./hacker-news-update/base-content/base-conte
 import {StudentListComponent} from "./student-list/student-list.component";
 import {RatingBarComponent} from "./rating-bar/rating-bar.component";
 import {TimerCountdownComponent} from "./timer-countdown/timer-countdown.component";
+import {TodoListComponent} from "./todo-list/todo-list.component";
+import {RegFinalComponent} from "./reg-final/reg-final.component";
 
 
 const routes: Routes = [
@@ -20,9 +22,11 @@ const routes: Routes = [
   {path: 'font-size', component: FontSizeComponent },
   {path: 'hacker-news', component: HackerNewsComponent },
   {path: 'hacker-news-update', component: BaseContentComponent },
-  {path: 'student-list', component: StudentListComponent },
+  {path: 'student-list', component: StudentListComponent,},
   {path: 'rating-bar', component: RatingBarComponent },
   {path: 'timer', component: TimerCountdownComponent },
+  {path: 'todo', component: TodoListComponent },
+  {path: 'reg-final', component: RegFinalComponent },
 ];
 
 @NgModule({

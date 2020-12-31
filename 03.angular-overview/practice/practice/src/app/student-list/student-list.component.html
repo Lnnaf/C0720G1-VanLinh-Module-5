@@ -22,12 +22,19 @@
             <ng-template #thenBlock><p style="color: #1aff20">Passed</p></ng-template>
             <ng-template #elseBlock><p style="color: #ff050f">Failed</p></ng-template>
         </td>
-        <td><button class="btn btn-danger" type="button" (click)="getDetail(student)">Detail</button></td>
+        <td><button class="btn btn-danger" type="button" (click)="getDetail(student)">Detail</button>
+        <td><button class="btn btn-danger" type="button" (click)="edit(student)">Edit</button>
+        <td><button class="btn btn-danger" type="button" (click)="delete(student)">Delete</button>
+        </td>
     </tr>
     </tbody>
 </table>
 <div *ngIf="studentDetail">
     <app-student-managerment [student]="studentDetail"></app-student-managerment>
+</div>
+<div>
+    <app-form-create></app-form-create>
+    <app-form-edit></app-form-edit>
 </div>
 
 
