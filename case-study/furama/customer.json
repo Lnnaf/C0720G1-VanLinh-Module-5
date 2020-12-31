@@ -1,0 +1,34 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "name": "B.Obama",
+      "date": "12/03/1999",
+      "id_card": "123123123",
+      "phone": "+84834530628",
+      "email": "obama@washington.dc",
+      "address": "Washington DC",
+      "type": "gold"
+    },
+    {
+      "id": 2,
+      "name": "D.Trump",
+      "date": "12/03/1999",
+      "id_card": "123123123",
+      "phone": "+84834530628",
+      "email": "Trump@washington.dc",
+      "address": "Washington DC",
+      "type": "platinum"
+    },
+    {
+      "id": 3,
+      "name": "J.Bush",
+      "date": "12/03/1999",
+      "id_card": "123123123",
+      "phone": "+84834530628",
+      "email": "Bush@washington.dc",
+      "address": "Washington DC",
+      "type": "diamond"
+    }
+  ]
+}

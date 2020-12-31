@@ -1,0 +1,75 @@
+<form class="example-form" [formGroup]="regCustomerForm" (ngSubmit)="onSubmit()">
+  <h1 mat-dialog-title>Customer Register</h1>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Name*</mat-label>
+    <input matInput placeholder="Ex. John Wick" formControlName="name" >
+    <mat-error *ngFor="let validation of validation_messages.name">
+      <mat-error class="error-message"
+                 *ngIf="regCustomerForm.get('name').hasError(validation.type) && (regCustomerForm.get('name').dirty || regCustomerForm.get('name').touched)">
+        {{validation.message}}</mat-error>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Date* </mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="date">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    <mat-error *ngFor="let validation of validation_messages.date">
+      <mat-error class="error-message"
+                 *ngIf="regCustomerForm.get('date').hasError(validation.type) && (regCustomerForm.get('date').dirty || regCustomerForm.get('date').touched)">
+        {{validation.message}}</mat-error>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>ID Card*</mat-label>
+    <input matInput placeholder="Ex. Pizza" formControlName="id_card">
+    <mat-error *ngFor="let validation of validation_messages.id_card">
+      <mat-error class="error-message"
+                 *ngIf="regCustomerForm.get('id_card').hasError(validation.type) && (regCustomerForm.get('id_card').dirty || regCustomerForm.get('id_card').touched)">
+        {{validation.message}}</mat-error>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Phone*</mat-label>
+    <input matInput placeholder="Ex. Pizza" formControlName="phone">
+    <mat-error *ngFor="let validation of validation_messages.phone">
+      <mat-error class="error-message"
+                 *ngIf="regCustomerForm.get('phone').hasError(validation.type) && (regCustomerForm.get('phone').dirty || regCustomerForm.get('phone').touched)">
+        {{validation.message}}</mat-error>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Email*</mat-label>
+    <input matInput placeholder="Ex. Pizza" formControlName="email">
+    <mat-error *ngFor="let validation of validation_messages.email">
+      <mat-error class="error-message"
+                 *ngIf="regCustomerForm.get('email').hasError(validation.type) && (regCustomerForm.get('email').dirty || regCustomerForm.get('email').touched)">
+        {{validation.message}}</mat-error>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Address*</mat-label>
+    <input matInput placeholder="Ex. Pizza" formControlName="address">
+    <mat-error *ngFor="let validation of validation_messages.address">
+      <mat-error class="error-message"
+                 *ngIf="regCustomerForm.get('address').hasError(validation.type) && (regCustomerForm.get('address').dirty || regCustomerForm.get('address').touched)">
+        {{validation.message}}</mat-error>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Select Type Customer*</mat-label>
+    <mat-select>
+      <mat-option value="Member">Member</mat-option>
+      <mat-option value="Silver">Silver</mat-option>
+      <mat-option value="Gold">Gold</mat-option>
+      <mat-option value="Platinum">Platinum</mat-option>
+      <mat-option value="Diamond">Diamond</mat-option>
+    </mat-select>
+    <mat-error *ngFor="let validation of validation_messages.type">
+      <mat-error class="error-message"
+                 *ngIf="regCustomerForm.get('type').hasError(validation.type) && (regCustomerForm.get('type').dirty || regCustomerForm.get('type').touched)">
+        {{validation.message}}</mat-error>
+    </mat-error>
+  </mat-form-field>
+  <button mat-raised-button color="primary">Register</button>
+</form>
