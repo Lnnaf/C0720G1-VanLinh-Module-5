@@ -9,10 +9,18 @@ import {MatDialog} from '@angular/material/dialog';
 import {ConfirmDeleteComponent} from '../confirm-delete/confirm-delete.component';
 import {MatSnackBar, MatSnackBarVerticalPosition} from '@angular/material/snack-bar';
 import {MatSnackBarHorizontalPosition} from '@angular/material/snack-bar/snack-bar-config';
+import {CustomerDetailComponent} from '../customer-detail/customer-detail.component';
+import {UpdateCustomerComponent} from '../update-customer/update-customer.component';
 
 export interface DialogData {
   id: number;
   name: string;
+  date:string,
+  id_card:string,
+  phone:string,
+  email:string,
+  address:string,
+  type:string,
 }
 
 @Component({
@@ -92,5 +100,35 @@ export class CustomerComponent implements OnInit {
       }
     });
 
+  }
+
+  detail(customer: Customer) {
+    const dialogRef = this.dialog.open(CustomerDetailComponent, {
+      data: {
+        id: customer.id,
+        name:customer.name,
+        date:customer.date,
+        id_card:customer.id_card,
+        phone:customer.phone,
+        address:customer.address,
+        email:customer.email,
+        type:customer.type
+      },
+    });
+  }
+
+  edit(customer: Customer) {
+    const dialogRef = this.dialog.open(UpdateCustomerComponent, {
+      data: {
+        id: customer.id,
+        name:customer.name,
+        date:customer.date,
+        id_card:customer.id_card,
+        phone:customer.phone,
+        address:customer.address,
+        email:customer.email,
+        type:customer.type
+      },
+    });
   }
 }

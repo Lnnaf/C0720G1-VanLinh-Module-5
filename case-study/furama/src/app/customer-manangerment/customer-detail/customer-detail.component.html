@@ -1,0 +1,50 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image">
+      <div class="container">
+        <div class="d-flex justify-content-center h-100">
+          <div class="image_outer_container">
+            <div class="green_icon"></div>
+            <div class="image_inner_container">
+              <img src="https://yt3.ggpht.com/ytc/AAUvwnggKV40oVjF4SGADNHPfCtb2z2AQcGA4zXR6hI=s900-c-k-c0x00ffffff-no-rj">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <mat-card-title>Customer: {{data.name}}</mat-card-title>
+    <mat-card-subtitle>ID: {{data.id}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="card-content">
+      <div>
+        <mat-icon class="mat-icon" >today</mat-icon>
+        <span>BirthDay: {{data.date}}</span>
+      </div>
+      <div>
+        <mat-icon class="mat-icon" >credit_card</mat-icon>
+        <span>ID Card: {{data.id_card}}</span>
+      </div>
+      <div>
+        <mat-icon class="mat-icon" >call</mat-icon>
+        <span>Phone: {{data.phone}}</span>
+      </div>
+      <div>
+        <mat-icon class="mat-icon" >email</mat-icon>
+        <span>Email: {{data.email}}</span>
+      </div>
+      <div>
+        <mat-icon class="mat-icon" >home</mat-icon>
+        <span>Address: {{data.address}}</span>
+      </div>
+      <div>
+        <mat-icon class="mat-icon" >verified_user_outline</mat-icon>
+        <span>Customer Type : {{data.type}}</span>
+      </div>
+    </div>
+
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button  mat-button (click)="close()">CLOSE</button>
+  </mat-card-actions>
+</mat-card>

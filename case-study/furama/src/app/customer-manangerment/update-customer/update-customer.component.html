@@ -1,5 +1,9 @@
 <form class="example-form" [formGroup]="regCustomerForm" (ngSubmit)="onSubmit()">
   <h1 mat-dialog-title>Customer Register</h1>
+  <mat-form-field hidden class="example-full-width" appearance="outline">
+    <mat-label>ID*</mat-label>
+    <input matInput placeholder="Ex. John Wick" formControlName="id">
+  </mat-form-field>
   <mat-form-field class="example-full-width" appearance="outline">
     <mat-label>Name*</mat-label>
     <input matInput placeholder="Ex. John Wick" formControlName="name" >
@@ -11,7 +15,8 @@
   </mat-form-field>
   <mat-form-field class="example-full-width" appearance="outline">
     <mat-label>Date* </mat-label>
-    <input matInput [matDatepicker]="picker" formControlName="date">
+    <!--    [min]="minDate" [max]="maxDate"-->
+    <input matInput  [matDatepicker]="picker"  formControlName="date">
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
     <mat-error *ngFor="let validation of validation_messages.date">
@@ -71,5 +76,5 @@
         {{validation.message}}</mat-error>
     </mat-error>
   </mat-form-field>
-  <button mat-raised-button color="primary">Register</button>
+  <button mat-raised-button color="warn">Update</button>
 </form>

@@ -62,7 +62,7 @@
     },
     {
       "id": 12,
-      "name": "Nguyễn Văn Linh",
+      "name": "????????????????",
       "date": "2020-12-08T17:00:00.000Z",
       "id_card": "123123123",
       "phone": "0834530628",
@@ -74,6 +74,26 @@
       "id": 13,
       "name": "Nguyễn Văn Linh",
       "date": "2020-12-08T17:00:00.000Z",
+      "id_card": "123123123",
+      "phone": "0834530628",
+      "email": "Vanlinh12b5@gmail.com",
+      "address": "Da nang",
+      "type": "Silver"
+    },
+    {
+      "id": 14,
+      "name": "Nguyễn Văn Linhaaaa",
+      "date": "2021-01-01T17:00:00.000Z",
+      "id_card": "123123123",
+      "phone": "0834530628",
+      "email": "Vanlinh12b5@gmail.com",
+      "address": "Da nang",
+      "type": "Diamond"
+    },
+    {
+      "id": 15,
+      "name": "Nguyễn Văn Linhaaaa",
+      "date": "2021-01-01T17:00:00.000Z",
       "id_card": "123123123",
       "phone": "0834530628",
       "email": "Vanlinh12b5@gmail.com",

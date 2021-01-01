@@ -1,27 +1,28 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+import {DialogData} from '../customer/customer.component';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {CustomerService} from '../customer-service/customer.service';
-import {MatSnackBar, MatSnackBarVerticalPosition, MatSnackBarConfig} from '@angular/material/snack-bar';
-import {MatSnackBarHorizontalPosition} from '@angular/material/snack-bar/snack-bar-config';
+import {MatSnackBar, MatSnackBarVerticalPosition} from '@angular/material/snack-bar';
 import {Router} from '@angular/router';
-import {MatDialogRef} from '@angular/material/dialog';
-import {CustomerComponent} from '../customer/customer.component';
-
+import {MatSnackBarHorizontalPosition} from '@angular/material/snack-bar/snack-bar-config';
+import * as moment from 'moment';
 
 @Component({
-  selector: 'app-create-customer',
-  templateUrl: './create-customer.component.html',
-  styleUrls: ['./create-customer.component.scss']
+  selector: 'app-update-customer',
+  templateUrl: './update-customer.component.html',
+  styleUrls: ['./update-customer.component.scss']
 })
-export class CreateCustomerComponent implements OnInit {
+export class UpdateCustomerComponent implements OnInit {
   regCustomerForm: FormGroup;
-
   constructor(private formBuild: FormBuilder,
               public customerService: CustomerService,
               private snackBar: MatSnackBar,
               private router: Router,
-              private dialogRef: MatDialogRef<CreateCustomerComponent>) {
+              public dialogRef: MatDialogRef<UpdateCustomerComponent>,
+              @Inject(MAT_DIALOG_DATA) public data: DialogData) {
   }
+
 
   validation_messages = {
     'name': [
@@ -31,10 +32,11 @@ export class CreateCustomerComponent implements OnInit {
     ],
     'date': [
       {type: 'required', message: 'Date is required.'},
+      {type: 'c', message: 'Date is Min.'},
     ],
     'id_card': [
       {type: 'required', message: 'ID Card Required'},
-      {type: 'pattern', message: 'ID Card Should Has 9 numbers'},
+      // {type: 'pattern', message: 'ID Card Should Has 9 numbers'},
     ],
     'phone': [
       {type: 'required', message: 'Phone Required'},
@@ -56,7 +58,7 @@ export class CreateCustomerComponent implements OnInit {
     this.regCustomerForm = this.formBuild.group({
         id: [''],
         name: ['', [Validators.required, Validators.maxLength(255), Validators.minLength(5)]],
-        date: ['', Validators.required],
+        date: ['', [Validators.required]],
         id_card: ['', [Validators.required, Validators.pattern('\\d{9}')]],
         phone: ['', [Validators.required, Validators.pattern('(09|01[2|6|8|9]|08|84)+([0-9]{8,9})\\b')]],
         email: ['', [Validators.required, Validators.email]],
@@ -64,12 +66,19 @@ export class CreateCustomerComponent implements OnInit {
         type: ['', [Validators.required]]
       }
     );
-  };
-
-
+    this.regCustomerForm.setValue({
+      id:this.data.id,
+      name:this.data.name,
+      date:this.data.date,
+      id_card:this.data.id_card,
+      phone:this.data.phone,
+      email:this.data.email,
+      address:this.data.address,
+      type:this.data.type
+    })
+  }
   horizontalPosition: MatSnackBarHorizontalPosition = 'end';
   verticalPosition: MatSnackBarVerticalPosition = 'bottom';
-
   onSubmit() {
     if (this.regCustomerForm.invalid) {
       this.snackBar.open('Form Field Required', 'Failed', {
@@ -79,7 +88,7 @@ export class CreateCustomerComponent implements OnInit {
         panelClass: 'snackbar-failed'
       });
     } else {
-      this.customerService.create(this.regCustomerForm.value).subscribe(res => {
+      this.customerService.update(this.regCustomerForm.value.id,this.regCustomerForm.value).subscribe(res => {
         this.snackBar.open('Form Submitted', 'Success', {
           horizontalPosition: this.horizontalPosition,
           verticalPosition: this.verticalPosition,
