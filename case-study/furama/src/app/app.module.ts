@@ -21,6 +21,8 @@ import {MatSelectModule} from '@angular/material/select';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CreateCustomerComponent } from './create-customer-dialog/create-customer.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { ConfirmDeleteComponent } from './confirm-delete/confirm-delete.component';
 
 
 @NgModule({
@@ -28,6 +30,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     AppComponent,
     CustomerComponent,
     CreateCustomerComponent,
+    ConfirmDeleteComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +51,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatSelectModule,
     FormsModule,
     ReactiveFormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule,
   ],
   providers: [MatNativeDateModule],
   bootstrap: [AppComponent]

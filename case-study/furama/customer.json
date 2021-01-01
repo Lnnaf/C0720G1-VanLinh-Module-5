@@ -1,34 +1,84 @@
 {
   "customers": [
     {
-      "id": 1,
-      "name": "B.Obama",
-      "date": "12/03/1999",
+      "id": 5,
+      "name": "Nguyễn Văn Linh",
+      "date": "2020-12-08T17:00:00.000Z",
       "id_card": "123123123",
-      "phone": "+84834530628",
-      "email": "obama@washington.dc",
-      "address": "Washington DC",
-      "type": "gold"
+      "phone": "0834530628",
+      "email": "Vanlinh12b5@gmail.com",
+      "address": "Da nang",
+      "type": "Diamond"
     },
     {
-      "id": 2,
-      "name": "D.Trump",
-      "date": "12/03/1999",
+      "id": 6,
+      "name": "Nguyễn Văn Linh",
+      "date": "2020-12-08T17:00:00.000Z",
       "id_card": "123123123",
-      "phone": "+84834530628",
-      "email": "Trump@washington.dc",
-      "address": "Washington DC",
-      "type": "platinum"
+      "phone": "0834530628",
+      "email": "Vanlinh12b5@gmail.com",
+      "address": "Da nang",
+      "type": "Diamond"
     },
     {
-      "id": 3,
-      "name": "J.Bush",
-      "date": "12/03/1999",
+      "id": 7,
+      "name": "Nguyễn Văn Linh",
+      "date": "2020-12-08T17:00:00.000Z",
       "id_card": "123123123",
-      "phone": "+84834530628",
-      "email": "Bush@washington.dc",
-      "address": "Washington DC",
-      "type": "diamond"
+      "phone": "0834530628",
+      "email": "Vanlinh12b5@gmail.com",
+      "address": "Da nang",
+      "type": "Platinum"
+    },
+    {
+      "id": 8,
+      "name": "Nguyễn Văn Linh",
+      "date": "2020-12-08T17:00:00.000Z",
+      "id_card": "123123123",
+      "phone": "0834530628",
+      "email": "Vanlinh12b5@gmail.com",
+      "address": "Da nang",
+      "type": "Diamond"
+    },
+    {
+      "id": 9,
+      "name": "Nguyễn Văn Linh",
+      "date": "2021-01-04T17:00:00.000Z",
+      "id_card": "123123112",
+      "phone": "0834530628",
+      "email": "Vanlinh12b5@gmail.com",
+      "address": "Da nang",
+      "type": "Silver"
+    },
+    {
+      "id": 11,
+      "name": "Nguyễn Văn Linh",
+      "date": "2020-12-08T17:00:00.000Z",
+      "id_card": "123123123",
+      "phone": "0834530628",
+      "email": "Vanlinh12b5@gmail.com",
+      "address": "Da nang",
+      "type": "Silver"
+    },
+    {
+      "id": 12,
+      "name": "Nguyễn Văn Linh",
+      "date": "2020-12-08T17:00:00.000Z",
+      "id_card": "123123123",
+      "phone": "0834530628",
+      "email": "Vanlinh12b5@gmail.com",
+      "address": "Da nang",
+      "type": "Silver"
+    },
+    {
+      "id": 13,
+      "name": "Nguyễn Văn Linh",
+      "date": "2020-12-08T17:00:00.000Z",
+      "id_card": "123123123",
+      "phone": "0834530628",
+      "email": "Vanlinh12b5@gmail.com",
+      "address": "Da nang",
+      "type": "Silver"
     }
   ]
 }

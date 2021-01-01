@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable, throwError} from 'rxjs';
+import {Observable, Subject, throwError} from 'rxjs';
 import {Customer} from '../customer/customer.model';
 import {catchError} from 'rxjs/operators';
+import {CustomerComponent} from '../customer/customer.component';
 const httpOptions ={
   headers:new HttpHeaders({'Content-Type':'Application/json'})
 };
@@ -13,8 +14,8 @@ let apiUrlCustomer = 'http://localhost:3000/customers';
 })
 export class CustomerService {
 
-  constructor(private httpClient:HttpClient) { }
-
+  constructor(private httpClient:HttpClient,
+             ) { }
   getAll():Observable<Customer[]>{
     return this.httpClient.get<Customer[]>(apiUrlCustomer).pipe()
   }

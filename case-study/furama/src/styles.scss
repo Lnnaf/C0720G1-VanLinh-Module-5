@@ -7,5 +7,18 @@ table {
 }
 .modal-backdrop {
   z-index: -1;
+};
+.snackbar-failed {
+  color: #ff160e;
+  background-color: #fffdf9;
 }
-
+.snackbar-failed .mat-simple-snackbar-action   {
+  color: #ff160e;
+}
+.snackbar-success {
+  color: #25902c;
+  background-color: #fffdf9;
+}
+.snackbar-success .mat-simple-snackbar-action   {
+  color: #25902c;
+}

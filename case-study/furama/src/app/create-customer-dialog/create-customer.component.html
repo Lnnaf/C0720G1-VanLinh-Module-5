@@ -16,7 +16,7 @@
     <mat-datepicker #picker></mat-datepicker>
     <mat-error *ngFor="let validation of validation_messages.date">
       <mat-error class="error-message"
-                 *ngIf="regCustomerForm.get('date').hasError(validation.type) && (regCustomerForm.get('date').dirty || regCustomerForm.get('date').touched)">
+                 *ngIf="regCustomerForm.get('date').hasError(validation.type) && (regCustomerForm.get('date').touched || regCustomerForm.get('date').pristine)">
         {{validation.message}}</mat-error>
     </mat-error>
   </mat-form-field>
@@ -25,7 +25,7 @@
     <input matInput placeholder="Ex. Pizza" formControlName="id_card">
     <mat-error *ngFor="let validation of validation_messages.id_card">
       <mat-error class="error-message"
-                 *ngIf="regCustomerForm.get('id_card').hasError(validation.type) && (regCustomerForm.get('id_card').dirty || regCustomerForm.get('id_card').touched)">
+                 *ngIf="regCustomerForm.get('id_card').hasError(validation.type) && (regCustomerForm.get('id_card').touched || regCustomerForm.get('id_card').pristine)">
         {{validation.message}}</mat-error>
     </mat-error>
   </mat-form-field>
@@ -34,7 +34,7 @@
     <input matInput placeholder="Ex. Pizza" formControlName="phone">
     <mat-error *ngFor="let validation of validation_messages.phone">
       <mat-error class="error-message"
-                 *ngIf="regCustomerForm.get('phone').hasError(validation.type) && (regCustomerForm.get('phone').dirty || regCustomerForm.get('phone').touched)">
+                 *ngIf="regCustomerForm.get('phone').hasError(validation.type) && (regCustomerForm.get('phone').pristine || regCustomerForm.get('phone').touched)">
         {{validation.message}}</mat-error>
     </mat-error>
   </mat-form-field>
@@ -43,7 +43,7 @@
     <input matInput placeholder="Ex. Pizza" formControlName="email">
     <mat-error *ngFor="let validation of validation_messages.email">
       <mat-error class="error-message"
-                 *ngIf="regCustomerForm.get('email').hasError(validation.type) && (regCustomerForm.get('email').dirty || regCustomerForm.get('email').touched)">
+                 *ngIf="regCustomerForm.get('email').hasError(validation.type) && (regCustomerForm.get('email').pristine || regCustomerForm.get('email').touched)">
         {{validation.message}}</mat-error>
     </mat-error>
   </mat-form-field>
@@ -52,13 +52,13 @@
     <input matInput placeholder="Ex. Pizza" formControlName="address">
     <mat-error *ngFor="let validation of validation_messages.address">
       <mat-error class="error-message"
-                 *ngIf="regCustomerForm.get('address').hasError(validation.type) && (regCustomerForm.get('address').dirty || regCustomerForm.get('address').touched)">
+                 *ngIf="regCustomerForm.get('address').hasError(validation.type) && (regCustomerForm.get('address').pristine || regCustomerForm.get('address').touched)">
         {{validation.message}}</mat-error>
     </mat-error>
   </mat-form-field>
-  <mat-form-field class="example-full-width" appearance="outline">
+  <mat-form-field class="example-full-width" appearance="outline" >
     <mat-label>Select Type Customer*</mat-label>
-    <mat-select>
+    <mat-select formControlName="type">
       <mat-option value="Member">Member</mat-option>
       <mat-option value="Silver">Silver</mat-option>
       <mat-option value="Gold">Gold</mat-option>
@@ -67,7 +67,7 @@
     </mat-select>
     <mat-error *ngFor="let validation of validation_messages.type">
       <mat-error class="error-message"
-                 *ngIf="regCustomerForm.get('type').hasError(validation.type) && (regCustomerForm.get('type').dirty || regCustomerForm.get('type').touched)">
+                 *ngIf="regCustomerForm.get('type').hasError(validation.type) && (regCustomerForm.get('type').pristine || regCustomerForm.get('type').touched)">
         {{validation.message}}</mat-error>
     </mat-error>
   </mat-form-field>
