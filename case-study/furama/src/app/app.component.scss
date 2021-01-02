@@ -7,6 +7,11 @@
   left: 0;
   right: 0;
 }
+.mat-icon{
+  font-size: 20px;
+  position: relative;
+  vertical-align: middle !important;
+}
 .example-is-mobile .example-toolbar {
   position: fixed;
   /* Make sure the toolbar will stay on top of the content as it scrolls past. */
@@ -27,4 +32,7 @@ h1.example-app-name {
   /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
      `<body>` to be our scrolling element for mobile layouts. */
   flex: 1 0 auto;
+}
+.left-side-bar{
+  width: 20%!important;
 }

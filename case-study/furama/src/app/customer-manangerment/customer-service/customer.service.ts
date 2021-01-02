@@ -19,21 +19,21 @@ export class CustomerService {
   getAll():Observable<Customer[]>{
     return this.httpClient.get<Customer[]>(apiUrlCustomer).pipe()
   }
-  //add
+  //add----------------------------------
   create(customer): Observable<Customer> {
     return this.httpClient.post<Customer>(apiUrlCustomer , JSON.stringify(customer), httpOptions)
       .pipe(
         catchError(this.errorHandler)
       )
   };
-  //update
+  //update-------------------------------------
   update(id, customer): Observable<Customer> {
     return this.httpClient.put<Customer>(apiUrlCustomer + '/' + id, JSON.stringify(customer), httpOptions)
       .pipe(
         catchError(this.errorHandler)
       )
   }
-  //delete
+  //delete--------------------------------------------------
   delete(id){
     return this.httpClient.delete<Customer>(apiUrlCustomer + '/' + id, httpOptions)
       .pipe(
@@ -41,14 +41,14 @@ export class CustomerService {
       )
   }
 
-  //error handler
+  //error handler---------------------------------
   errorHandler(error) {
     let errorMessage = '';
     if(error.error instanceof ErrorEvent) {
       // Get client-side error
       errorMessage = error.error.message;
     } else {
-      // Get server-side error
+      // Get server-side error---------------------------
       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
     console.log(errorMessage);

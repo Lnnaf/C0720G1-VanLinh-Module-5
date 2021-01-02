@@ -25,6 +25,12 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatCardModule} from '@angular/material/card';
+import {Ng2SearchPipeModule} from 'ng2-search-filter';
+import {Ng2OrderModule} from 'ng2-order-pipe';
+import {NgxPaginationModule} from 'ngx-pagination';
+import {MatSortModule} from '@angular/material/sort';
+import { ListEmployeeComponent } from './employee-manager/list-employee/list-employee.component';
+import { DetailEmployeeComponent } from './employee-manager/detail-employee/detail-employee.component';
 
 
 
@@ -36,6 +42,8 @@ import {MatCardModule} from '@angular/material/card';
     ConfirmDeleteComponent,
     CustomerDetailComponent,
     UpdateCustomerComponent,
+    ListEmployeeComponent,
+    DetailEmployeeComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,6 +67,10 @@ import {MatCardModule} from '@angular/material/card';
     MatDialogModule,
     MatSnackBarModule,
     MatCardModule,
+    Ng2SearchPipeModule,
+    Ng2OrderModule,
+    NgxPaginationModule,
+    MatSortModule
   ],
   providers: [MatNativeDateModule,{
     provide:MAT_DATE_FORMATS,

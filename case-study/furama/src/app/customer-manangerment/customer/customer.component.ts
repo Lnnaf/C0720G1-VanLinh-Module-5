@@ -11,6 +11,8 @@ import {MatSnackBar, MatSnackBarVerticalPosition} from '@angular/material/snack-
 import {MatSnackBarHorizontalPosition} from '@angular/material/snack-bar/snack-bar-config';
 import {CustomerDetailComponent} from '../customer-detail/customer-detail.component';
 import {UpdateCustomerComponent} from '../update-customer/update-customer.component';
+import {MatSort} from '@angular/material/sort';
+import {MatPaginator} from '@angular/material/paginator';
 
 export interface DialogData {
   id: number;
@@ -29,6 +31,7 @@ export interface DialogData {
   styleUrls: ['./customer.component.scss']
 })
 export class CustomerComponent implements OnInit {
+  name:any;
   data: Customer[] = [];
   displayedColumns: string[] = ['position', 'name', 'date', 'id_card',
     'phone', 'email', 'address', 'type', 'action'];
@@ -36,20 +39,24 @@ export class CustomerComponent implements OnInit {
   private router: Router;
   horizontalPosition: MatSnackBarHorizontalPosition = 'end';
   verticalPosition: MatSnackBarVerticalPosition = 'bottom';
-
+  @ViewChild(MatSort, {static: false}) sort: MatSort;
+  @ViewChild(MatPaginator,{static: false}) paginator: MatPaginator;
   constructor(private customerService: CustomerService,
               public dialog: MatDialog,
               private snackBar: MatSnackBar) {
   }
 
+
   ngOnInit(): void {
     this.getAll();
-    console.log(this.dataSource);
   }
 
   getAll() {
-    this.customerService.getAll().subscribe((data: Customer[]) => {
-      this.dataSource = new MatTableDataSource<Customer>(data);
+    this.customerService.getAll().subscribe(res => {
+      this.dataSource = new MatTableDataSource<Customer>(res);
+      this.dataSource.sort = this.sort;
+      this.dataSource.paginator = this.paginator;
+
     });
   };
 
@@ -130,5 +137,9 @@ export class CustomerComponent implements OnInit {
         type:customer.type
       },
     });
+  }
+
+  public doFilter = (value: string) => {
+    this.dataSource.filter = value.trim().toLocaleLowerCase();
   }
 }
