@@ -3,6 +3,8 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {StudentService} from "../student-list/student.service";
 import {IStudent} from "../student-managerment/IStudent";
+import {StudentListComponent} from "../student-list/student-list.component";
+import {FormCreateComponent} from "../form-create/form-create.component";
 
 @Component({
     selector: 'app-form-edit',
@@ -14,7 +16,8 @@ export class FormEditComponent implements OnInit {
 
     constructor(private fb: FormBuilder,
                 private router: Router,
-                public studentService: StudentService) {
+                public studentService: StudentService,
+                private studentList:StudentListComponent,) {
     }
 
     ngOnInit(): void {
@@ -37,15 +40,15 @@ export class FormEditComponent implements OnInit {
         })
     }
 
-    redirectTo(uri: string) {
-        this.router.navigateByUrl('/', {skipLocationChange: true}).then(() =>
-            this.router.navigate([uri]));
-    }
+    // redirectTo(uri: string) {
+    //     this.router.navigateByUrl('/', {skipLocationChange: true}).then(() =>
+    //         this.router.navigate([uri]));
+    // }
 
     onSubmit() {
         this.studentService.update(this.regStudentForm.value.id, this.regStudentForm.value).subscribe(res => {
             alert('Updated Success!!');
-            this.redirectTo('student-list');
+         this.studentList.ngOnInit();
         })
     }
 }

@@ -3,18 +3,19 @@
     <div class="form-group row" hidden>
         <label class="col">
             ID
-            <input type="text" class="form-control" formControlName="id" >
+            <input type="text" class="form-control" formControlName="id">
         </label>
     </div>
     <div class="form-group row">
         <label class="col">
-        Name
-            <input type="text" class="form-control" formControlName="name" >
+            Name
+            <input type="text" class="form-control" formControlName="name">
         </label>
     </div>
-    <div class="alert alert-danger" role="alert" *ngIf="regStudentForm.get('name').invalid && regStudentForm.get('name').touched">
-        <span *ngIf="regStudentForm.get('name').hasError('required')">Name is required</span>
-        <p *ngIf="regStudentForm.get('name').hasError('minLength')">Name need has least 5 words</p>
+    <div *ngFor="let validation of validation_messages.name">
+        <div class="alert-danger"
+           *ngIf="regStudentForm.get('name').hasError(validation.type) && (regStudentForm.get('name').dirty || regStudentForm.get('name').touched)">
+            {{validation.message}}</div>
     </div>
     <div class="form-group row">
         <label class="col">
@@ -22,25 +23,30 @@
             <input type="text" class="form-control" formControlName="address">
         </label>
     </div>
-    <div class="alert alert-danger" role="alert" *ngIf="regStudentForm.get('address').invalid && regStudentForm.get('address').touched">
-        <span *ngIf="regStudentForm.get('name').hasError('required')">Address is required</span>
+    <div *ngFor="let validation of validation_messages.address">
+        <div class="alert-danger"
+             *ngIf="regStudentForm.get('address').hasError(validation.type) && (regStudentForm.get('address').dirty || regStudentForm.get('address').touched)">
+            {{validation.message}}</div>
     </div>
     <div class="form-group row">
-    <label class="col">
-        Age
-        <input type="number" class="form-control" formControlName="age" >
-    </label>
-</div>
-    <div class="alert alert-danger" role="alert" *ngIf="regStudentForm.get('age').invalid && regStudentForm.get('age').touched">
-        <span *ngIf="regStudentForm.get('age').hasError('required')">Age is required</span>
+        <label class="col">
+            Age
+            <input type="number" class="form-control" formControlName="age">
+        </label>
+    </div>
+    <div *ngFor="let validation of validation_messages.age">
+        <div class="alert-danger"
+             *ngIf="regStudentForm.get('age').hasError(validation.type) && (regStudentForm.get('age').dirty || regStudentForm.get('age').touched)">
+            {{validation.message}}</div>
     </div>
     <div class="form-group row">
         <label class="col">
             Mark
-            <input type="number" class="form-control" formControlName="mark" >
+            <input type="number" class="form-control" formControlName="mark">
         </label>
     </div>
-    <div class="alert alert-danger" role="alert" *ngIf="regStudentForm.get('mark').invalid && regStudentForm.get('mark').touched">
+    <div class="alert alert-danger" role="alert"
+         *ngIf="regStudentForm.get('mark').invalid && regStudentForm.get('mark').touched">
         <span *ngIf="regStudentForm.get('mark').hasError('required')">Mark is required</span>
     </div>
     <div class="form-group">

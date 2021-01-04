@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {StudentService} from "../student-list/student.service";
 import {IStudent} from "../student-managerment/IStudent";
 import {Router} from "@angular/router";
+import {StudentListComponent} from "../student-list/student-list.component";
 
 @Component({
     selector: 'app-form-create',
@@ -12,10 +13,26 @@ import {Router} from "@angular/router";
 export class FormCreateComponent implements OnInit {
     @Input() student2: IStudent;
     regStudentForm: FormGroup;
+    validation_messages = {
+        'name': [
+            { type: 'required', message: 'Name is required.' },
+            { type: 'minlength', message: 'Name should has least 5 words.' },
+            { type: 'maxlength', message: 'Name should has max 255 words.' },
+        ],
+        'address':[
+            { type: 'required',message:'Address is required'}
+        ],
+        'age':[
+            { type: 'required',message:'Age is required'},
+            { type: 'min',message:'Min Age is 18 year old'},
+            { type: 'max',message:'Max Age is 120 year old'},
+        ],
+    };
 
     constructor(private fb: FormBuilder,
                 private router: Router,
-                public studentService: StudentService) {
+                public studentService: StudentService,
+                private studentList: StudentListComponent) {
     }
 
     ngOnInit(): void {
@@ -23,7 +40,7 @@ export class FormCreateComponent implements OnInit {
             id: [''],
             name: ['', [Validators.required, Validators.maxLength(255), Validators.minLength(5)]],
             address: ['', Validators.required],
-            age: ['', [Validators.required, Validators.min(18), Validators.max(100)]],
+            age: ['', [Validators.required, Validators.min(18), Validators.max(120)]],
             mark: ['']
         });
     }
@@ -34,8 +51,7 @@ export class FormCreateComponent implements OnInit {
     }
     onSubmit() {
         this.studentService.create(this.regStudentForm.value).subscribe(res => {
-            alert("Created Success!");
-            this.redirectTo('student-list');
+           this.studentList.ngOnInit();
         })
     }
 }

@@ -1,7 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {IStudent} from "../student-managerment/IStudent";
 import {StudentService} from "./student.service";
-import {FormCreateComponent} from "../form-create/form-create.component";
 import {FormEditComponent} from "../form-edit/form-edit.component";
 import {Router} from "@angular/router";
 
@@ -25,9 +24,6 @@ export class StudentListComponent implements OnInit {
         })
     }
 
-
-    studentUpdate: IStudent;
-
     getDetail(student: IStudent) {
         this.studentDetail = student;
     }
@@ -37,16 +33,11 @@ export class StudentListComponent implements OnInit {
         this.formEdit.getDataFromList(student);
     }
 
-    redirectTo(uri: string) {
-        this.router.navigateByUrl('/', {skipLocationChange: true}).then(() =>
-            this.router.navigate([uri]));
-    }
-
     delete(student: IStudent) {
         if (confirm('Are you sure for delete student: ' + student.name + '?')) {
             this.studentService.delete(student.id).subscribe(res => {
                 alert('student: ' + student.name + ' was deleted!');
-                this.redirectTo('student-list');
+                this.ngOnInit()
             })
         } else {
             alert('You was cancel this action');
