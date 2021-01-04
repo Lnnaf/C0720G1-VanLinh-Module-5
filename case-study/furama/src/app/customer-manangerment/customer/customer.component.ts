@@ -59,14 +59,17 @@ export class CustomerComponent implements OnInit {
 
     });
   };
-
+  refresh() {
+    this.getAll();
+    this.dataSource.data = this.dataSource.data;
+  }
   openDialog() {
     const dialogRef = this.dialog.open(CreateCustomerComponent, {
       width: '600px',
 
     });
     dialogRef.afterClosed().subscribe(result => {
-      this.getAll();
+     this.ngOnInit()
     });
   }
 
@@ -94,7 +97,8 @@ export class CustomerComponent implements OnInit {
               horizontalPosition: this.horizontalPosition,
               verticalPosition: this.verticalPosition,
               duration: 1500,
-            })
+            });
+            this.refresh()
           }
         });
       } else {
@@ -137,6 +141,9 @@ export class CustomerComponent implements OnInit {
         type:customer.type
       },
     });
+    dialogRef.afterClosed().subscribe(res=>{
+      this.ngOnInit()
+    })
   }
 
   public doFilter = (value: string) => {

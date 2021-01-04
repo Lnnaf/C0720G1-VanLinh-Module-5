@@ -89,10 +89,11 @@ export class UpdateCustomerComponent implements OnInit {
       });
     } else {
       this.customerService.update(this.regCustomerForm.value.id,this.regCustomerForm.value).subscribe(res => {
-        this.snackBar.open('Form Submitted', 'Success', {
+        this.snackBar.open('Update success', 'Success', {
           horizontalPosition: this.horizontalPosition,
           verticalPosition: this.verticalPosition,
-          panelClass: 'snackbar-success'
+          panelClass: 'snackbar-success',
+          duration: 1500,
         });
       });
       this.dialogRef.close();

@@ -1,0 +1,124 @@
+<form class="example-form" [formGroup]="regForm" (ngSubmit)="onSubmit()">
+  <h1 mat-dialog-title>Employee Register</h1>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Name*</mat-label>
+    <input matInput placeholder="Ex. John Wick" formControlName="name" >
+    <mat-error *ngFor="let validation of validation_messages.name">
+      <mat-error class="error-message"
+                 *ngIf="regForm.get('name').hasError(validation.type) && (regForm.get('name').dirty || regForm.get('name').touched)">
+        {{validation.message}}</mat-error>
+    </mat-error>
+  </mat-form-field>
+  <!--  Position-->
+  <table class="example-full-width" cellspacing="0"><tr>
+    <td><mat-form-field class="example-full-width" appearance="outline" >
+      <mat-label>Select Position*</mat-label>
+      <mat-select formControlName="position">
+        <mat-option value="Lễ Tân">Lễ Tân</mat-option>
+        <mat-option value="Phục vụ">Phục vụ</mat-option>
+        <mat-option value="Chuyên viên">Chuyên viên</mat-option>
+        <mat-option value="Giám sát">Giám sát</mat-option>
+        <mat-option value="Quản lý">Quản lý</mat-option>
+        <mat-option value="Giám đốc">Giám đốc</mat-option>
+      </mat-select>
+      <mat-error *ngFor="let validation of validation_messages.position">
+        <mat-error class="error-message"
+                   *ngIf="regForm.get('position').hasError(validation.type) && (regForm.get('position').pristine || regForm.get('position').touched)">
+          {{validation.message}}</mat-error>
+      </mat-error>
+    </mat-form-field></td>
+    <!--  Education -->
+    <td> <mat-form-field class="example-full-width" appearance="outline" >
+      <mat-label>Select Education*</mat-label>
+      <mat-select formControlName="education">
+        <mat-option value="Trung cấp">Trung cấp</mat-option>
+        <mat-option value="Cao đẳng">Cao đẳng</mat-option>
+        <mat-option value="Đại học">Đại học</mat-option>
+        <mat-option value="Sau đại học">Sau đại học</mat-option>
+      </mat-select>
+      <mat-error *ngFor="let validation of validation_messages.education">
+        <mat-error class="error-message"
+                   *ngIf="regForm.get('education').hasError(validation.type) && (regForm.get('education').pristine || regForm.get('education').touched)">
+          {{validation.message}}</mat-error>
+      </mat-error>
+    </mat-form-field></td>
+    <!--  Department-->
+    <td><mat-form-field class="example-full-width" appearance="outline" >
+      <mat-label>Select Department*</mat-label>
+      <mat-select formControlName="department">
+        <mat-option value="Sale – Marketing">Sale – Marketing</mat-option>
+        <mat-option value="Hành Chính">Hành Chính</mat-option>
+        <mat-option value="Phục vụ">Phục vụ</mat-option>
+        <mat-option value="Quản lý">Quản lý</mat-option>
+      </mat-select>
+      <mat-error *ngFor="let validation of validation_messages.department">
+        <mat-error class="error-message"
+                   *ngIf="regForm.get('department').hasError(validation.type) && (regForm.get('department').pristine || regForm.get('department').touched)">
+          {{validation.message}}</mat-error>
+      </mat-error>
+    </mat-form-field></td>
+  </tr></table>
+  <!--  Date-->
+  <table class="example-full-width" cellspacing="0"><tr>
+    <td><mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Date* </mat-label>
+      <!--    [min]="minDate" [max]="maxDate"-->
+      <input matInput [min]="minDate" [max]="maxDate"  [matDatepicker]="picker"  formControlName="date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngFor="let validation of validation_messages.date">
+        <mat-error class="error-message"
+                   *ngIf="regForm.get('date').hasError(validation.type) && (regForm.get('date').touched || regForm.get('date').pristine)">
+          {{validation.message}}</mat-error>
+      </mat-error>
+    </mat-form-field></td>
+    <td><mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>ID Card*</mat-label>
+      <input matInput placeholder="Ex. Pizza" formControlName="id_card">
+      <mat-error *ngFor="let validation of validation_messages.id_card">
+        <mat-error class="error-message"
+                   *ngIf="regForm.get('id_card').hasError(validation.type) && (regForm.get('id_card').touched || regForm.get('id_card').pristine)">
+          {{validation.message}}</mat-error>
+      </mat-error>
+    </mat-form-field></td>
+  </tr></table>
+  <!--  Salary-->
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Salary*</mat-label>
+    <input type="number" matInput placeholder="Ex. 1000" formControlName="salary">
+    <mat-error *ngFor="let validation of validation_messages.salary">
+      <mat-error class="error-message"
+                 *ngIf="regForm.get('salary').hasError(validation.type) && (regForm.get('salary').touched || regForm.get('salary').pristine)">
+        {{validation.message}}</mat-error>
+    </mat-error>
+  </mat-form-field>
+  <!--  Phone-->
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Phone*</mat-label>
+    <input matInput placeholder="Ex. 0834530628" formControlName="phone">
+    <mat-error *ngFor="let validation of validation_messages.phone">
+      <mat-error class="error-message"
+                 *ngIf="regForm.get('phone').hasError(validation.type) && (regForm.get('phone').pristine || regForm.get('phone').touched)">
+        {{validation.message}}</mat-error>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Email*</mat-label>
+    <input matInput placeholder="Ex. Pizza" formControlName="email">
+    <mat-error *ngFor="let validation of validation_messages.email">
+      <mat-error class="error-message"
+                 *ngIf="regForm.get('email').hasError(validation.type) && (regForm.get('email').pristine || regForm.get('email').touched)">
+        {{validation.message}}</mat-error>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Address*</mat-label>
+    <input matInput placeholder="Ex. Pizza" formControlName="address">
+    <mat-error *ngFor="let validation of validation_messages.address">
+      <mat-error class="error-message"
+                 *ngIf="regForm.get('address').hasError(validation.type) && (regForm.get('address').pristine || regForm.get('address').touched)">
+        {{validation.message}}</mat-error>
+    </mat-error>
+  </mat-form-field>
+  <button mat-raised-button color="primary">Update</button>
+</form>

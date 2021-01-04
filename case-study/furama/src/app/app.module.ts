@@ -31,6 +31,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import {MatSortModule} from '@angular/material/sort';
 import { ListEmployeeComponent } from './employee-manager/list-employee/list-employee.component';
 import { DetailEmployeeComponent } from './employee-manager/detail-employee/detail-employee.component';
+import { CreateEmployeeDiaglogComponent } from './employee-manager/create-employee-diaglog/create-employee-diaglog.component';
+import { UpdateEmployeeComponent } from './employee-manager/update-employee/update-employee.component';
 
 
 
@@ -44,6 +46,8 @@ import { DetailEmployeeComponent } from './employee-manager/detail-employee/deta
     UpdateCustomerComponent,
     ListEmployeeComponent,
     DetailEmployeeComponent,
+    CreateEmployeeDiaglogComponent,
+    UpdateEmployeeComponent,
   ],
   imports: [
     BrowserModule,

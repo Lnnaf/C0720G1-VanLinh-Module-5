@@ -79,7 +79,6 @@ export class CreateCustomerComponent implements OnInit {
   verticalPosition: MatSnackBarVerticalPosition = 'bottom';
 
   onSubmit() {
-    this.regCustomerForm.value.date = moment(this.regCustomerForm.value.date).format('DD-MM-YYYY');
     if (this.regCustomerForm.invalid) {
       this.snackBar.open('Form Field Required', 'Failed', {
         horizontalPosition: this.horizontalPosition,

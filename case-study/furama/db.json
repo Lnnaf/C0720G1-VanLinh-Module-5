@@ -1,34 +1,14 @@
 {
   "customers": [
     {
-      "id": 5,
-      "name": "Nguyễn Văn Linh",
-      "date": "2020-12-08T17:00:00.000Z",
-      "id_card": "123123123",
-      "phone": "0834530628",
-      "email": "Vanlinh12b5@gmail.com",
-      "address": "Da nang",
-      "type": "Diamond"
-    },
-    {
       "id": 6,
-      "name": "Nguyễn Văn Linh",
+      "name": "Nguyễn Văn Linhaf",
       "date": "2020-12-08T17:00:00.000Z",
       "id_card": "123123123",
       "phone": "0834530628",
       "email": "Vanlinh12b5@gmail.com",
       "address": "Da nang",
       "type": "Diamond"
-    },
-    {
-      "id": 7,
-      "name": "Nguyễn Văn Linh",
-      "date": "2020-12-08T17:00:00.000Z",
-      "id_card": "123123123",
-      "phone": "0834530628",
-      "email": "Vanlinh12b5@gmail.com",
-      "address": "Da nang",
-      "type": "Platinum"
     },
     {
       "id": 8,
@@ -52,7 +32,7 @@
     },
     {
       "id": 11,
-      "name": "Nguyễn Văn Linh",
+      "name": "Nguyễn Văn Linha",
       "date": "2020-12-08T17:00:00.000Z",
       "id_card": "123123123",
       "phone": "0834530628",
@@ -72,28 +52,8 @@
     },
     {
       "id": 13,
-      "name": "Nguyễn Văn Linh",
+      "name": "Nguyễn Văn Linha",
       "date": "2020-12-08T17:00:00.000Z",
-      "id_card": "123123123",
-      "phone": "0834530628",
-      "email": "Vanlinh12b5@gmail.com",
-      "address": "Da nang",
-      "type": "Silver"
-    },
-    {
-      "id": 14,
-      "name": "Nguyễn Văn Linhaaaa",
-      "date": "2021-01-01T17:00:00.000Z",
-      "id_card": "123123123",
-      "phone": "0834530628",
-      "email": "Vanlinh12b5@gmail.com",
-      "address": "Da nang",
-      "type": "Diamond"
-    },
-    {
-      "id": 15,
-      "name": "Nguyễn Văn Linhaaaa",
-      "date": "2021-01-01T17:00:00.000Z",
       "id_card": "123123123",
       "phone": "0834530628",
       "email": "Vanlinh12b5@gmail.com",
@@ -101,44 +61,149 @@
       "type": "Silver"
     }
   ],
-  "employee": [{
-    "id": 1,
-    "name": "J. Osasuke",
-    "position": "Lễ Tân",
-    "education": "Cao Đẳng",
-    "department": "Sale- Marketing",
-    "date": "1980-01-01T17:00:00.000Z",
-    "id_card": "023423123",
-    "salary": 1234,
-    "phone": "0123456789",
-    "email": "Osasuke@gmail.com",
-    "address": "Tokyo, JP"
-  },
+  "employee": [
+    {
+      "id": 1,
+      "name": "J. Osasukeeadffxxxx",
+      "position": "Lễ Tân",
+      "education": "Sau đại học",
+      "department": "Quản lý",
+      "date": "1980-01-01T17:00:00.000Z",
+      "id_card": "023423123",
+      "salary": 1234,
+      "phone": "0834530628",
+      "email": "Osasuke@gmail.com",
+      "address": "Tokyo, JP"
+    },
     {
       "id": 2,
       "name": "J. Naruto",
       "position": "Lễ Tân",
-      "education": "Cao Đẳng",
-      "department": "Sale- Marketing",
+      "education": "Sau đại học",
+      "department": "Quản lý",
       "date": "1988-11-01T17:00:00.000Z",
       "id_card": "093212312",
       "salary": 3221,
       "phone": "323211232",
       "email": "Naruto@gmail.com",
       "address": "Kyoto, JP"
-    } ,
+    },
     {
       "id": 3,
-      "name": "J. D Dragon",
-      "position": "Lễ Tân",
-      "education": "Cao Đẳng",
-      "department": "Sale- Marketing",
+      "name": "J. D Dragonar",
+      "position": "Giám đốc",
+      "education": "Sau đại học",
+      "department": "Quản lý",
       "date": "1985-01-02T17:00:00.000Z",
       "id_card": "442123423",
       "salary": 3442,
-      "phone": "09212312",
+      "phone": "0921231234",
       "email": "Dragon@gmail.com",
       "address": "Ho Chi Minh City, VN"
+    },
+    {
+      "id": 4,
+      "name": "Monkey D.Luffy",
+      "position": "Giám đốc",
+      "education": "Sau đại học",
+      "department": "Quản lý",
+      "date": "2002-12-03T17:00:00.000Z",
+      "id_card": "342321222",
+      "salary": 23232,
+      "phone": "84514330628",
+      "email": "luffy@secoku.com",
+      "address": "South Blue"
+    },
+    {
+      "id": 5,
+      "name": "Nguyễn Văn Linhfxa",
+      "position": "Giám đốc",
+      "education": "Sau đại học",
+      "department": "Quản lý",
+      "date": "2002-12-30T17:00:00.000Z",
+      "id_card": "223123155",
+      "salary": 1232,
+      "phone": "84514330628",
+      "email": "vanlinh@gmail.com",
+      "address": "Da nang"
+    },
+    {
+      "id": 6,
+      "name": "Nguyễn Văn Linha",
+      "position": "Giám đốc",
+      "education": "Đại học",
+      "department": "Phục vụ",
+      "date": "2002-12-03T17:00:00.000Z",
+      "id_card": "123123123",
+      "salary": 231231,
+      "phone": "0834530628",
+      "email": "vanlinh12b5@a",
+      "address": "Dada"
+    },
+    {
+      "id": 7,
+      "name": "Nguyễn Văn Linhaadf.a",
+      "position": "Chuyên viên",
+      "education": "Đại học",
+      "department": "Phục vụ",
+      "date": "2002-12-02T17:00:00.000Z",
+      "id_card": "123123123",
+      "salary": 123123,
+      "phone": "0834530628",
+      "email": "valinh@aa",
+      "address": "adadad"
+    },
+    {
+      "id": 8,
+      "name": "Nguyễn Văn Linhad",
+      "position": "Chuyên viên",
+      "education": "Sau đại học",
+      "department": "Phục vụ",
+      "date": "2002-12-02T17:00:00.000Z",
+      "id_card": "123123123",
+      "salary": 1234,
+      "phone": "0834530628",
+      "email": "vanlinh12b5@gmail.com",
+      "address": "valinh@aa"
+    },
+    {
+      "id": 9,
+      "name": "Nguyễn Văn Linha",
+      "position": "Chuyên viên",
+      "education": "Đại học",
+      "department": "Phục vụ",
+      "date": "2002-12-10T17:00:00.000Z",
+      "id_card": "123123123",
+      "salary": 1234,
+      "phone": "0834530628",
+      "email": "vanlinh12b5@a",
+      "address": "a@a"
+    },
+    {
+      "id": 10,
+      "name": "Nguyễn Văn Linhf",
+      "position": "Chuyên viên",
+      "education": "Cao đẳng",
+      "department": "Phục vụ",
+      "date": "2002-12-11T17:00:00.000Z",
+      "id_card": "123123123",
+      "salary": 1234,
+      "phone": "0834530628",
+      "email": "a2@a",
+      "address": "aa"
+    },
+    {
+      "id": 11,
+      "name": "Nguyễn Văn Linh",
+      "position": "Chuyên viên",
+      "education": "Đại học",
+      "department": "Phục vụ",
+      "date": "2002-12-04T17:00:00.000Z",
+      "id_card": "123123123",
+      "salary": 1234,
+      "phone": "0834530628",
+      "email": "a2@a",
+      "address": "aa"
     }
   ]
 }
